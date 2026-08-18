@@ -6,9 +6,7 @@ function setTheme(theme) {
     );
 
     if (theme === "purple") {
-
         document.body.classList.add("sk-purple");
-
     }
 
     localStorage.setItem(
@@ -18,17 +16,9 @@ function setTheme(theme) {
 }
 
 
-/* Load saved theme */
-
 const savedTheme =
     localStorage.getItem("SleepKnight8Theme");
 
 if (savedTheme === "purple") {
-
-    setTheme("purple");
-
-} else {
-
-    setTheme("yellow");
-
+    document.body.classList.add("sk-purple");
 }
