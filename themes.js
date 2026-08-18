@@ -1,23 +1,34 @@
 function setTheme(theme) {
 
+    document.body.classList.remove(
+        "sk-yellow",
+        "sk-purple"
+    );
+
     if (theme === "purple") {
-        document.body.classList.add("purple");
-        localStorage.setItem("theme", "purple");
+
+        document.body.classList.add("sk-purple");
+
     }
 
-    else {
-        document.body.classList.remove("purple");
-        localStorage.setItem("theme", "yellow");
-    }
+    localStorage.setItem(
+        "SleepKnight8Theme",
+        theme
+    );
 }
 
 
-// Load saved theme
+/* Load saved theme */
 
-const theme = localStorage.getItem("theme");
+const savedTheme =
+    localStorage.getItem("SleepKnight8Theme");
 
-if (theme === "purple") {
+if (savedTheme === "purple") {
+
     setTheme("purple");
+
 } else {
+
     setTheme("yellow");
+
 }
