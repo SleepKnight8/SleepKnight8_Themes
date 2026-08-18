@@ -1,0 +1,15 @@
+:root {
+    --bg: #13171c;
+    --bg2: #1b2028;
+    --primary: #f5e05a;
+    --hover: #887912;
+    --card: #1a1f27;
+}
+
+body.purple {
+    --bg: #15111c;
+    --bg2: #21182b;
+    --primary: #c77dff;
+    --hover: #7b2cbf;
+    --card: #30233d;
+}
