@@ -1,84 +1,59 @@
 # SleepKnight8 Themes
 
-A simple theme library for SleepKnight8 projects.
+A simple reusable theme library for SleepKnight8 projects.
 
-## Setup
+Currently includes:
 
-### 1. Copy the files
+* 🟡 Yellow Theme
+* 🟣 Purple Theme
+* Automatic theme saving with `localStorage`
+* Buttons, inputs, links, surfaces, sliders, and other common elements
 
-Copy these two files into your project:
+## Usage
 
-```text
-SleepKnight8_Themes.css
-SleepKnight8_Themes.js
-```
-
-### 2. Add the CSS
-
-Inside `<head>`:
+### 1. Add the CSS
 
 ```html
-<link rel="stylesheet" href="SleepKnight8_Themes.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SleepKnight8/SleepKnight8_Themes/themes.css">
 ```
 
-### 3. Add the theme class
+### 2. Add the JavaScript
 
-Change your `<body>` to:
+Place this before your own JavaScript:
 
 ```html
-<body class="sleepknight8-theme">
+<script src="https://cdn.jsdelivr.net/gh/SleepKnight8/SleepKnight8_Themes/themes.js"></script>
+<script src="index.js"></script>
 ```
 
-### 4. Add the JavaScript
-
-Before `</body>`:
-
-```html
-<script src="SleepKnight8_Themes.js"></script>
-```
-
-### 5. Add theme buttons
-
-Use these wherever you want:
+### 3. Add theme buttons
 
 ```html
 <button onclick="setTheme('yellow')">🟡</button>
 <button onclick="setTheme('purple')">🟣</button>
 ```
 
-### 6. Make your layout
+### 4. Keep your own layout
 
-You can design your HTML however you want. The library handles the theme, while **your project controls the layout and functionality**.
+Create your own `style.css` for:
 
-### Complete example
+* Layout
+* Sizes
+* Spacing
+* Project-specific colors
+* Project-specific components
 
-```html
-<!DOCTYPE html>
-<html lang="en">
+The theme library handles the **overall appearance**, so you can freely create different layouts.
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+## Example
 
-    <title>My Project</title>
-
-    <link rel="stylesheet" href="SleepKnight8_Themes.css">
-</head>
-
-<body class="sleepknight8-theme">
-
-    <h1>My Project</h1>
-
-    <button onclick="setTheme('yellow')">🟡</button>
-    <button onclick="setTheme('purple')">🟣</button>
-
-    <!-- Your own layout goes here -->
-
-    <script src="SleepKnight8_Themes.js"></script>
-
-</body>
-
-</html>
+```text
+MyProject/
+├── index.html
+├── style.css
+└── index.js
 ```
 
-**That's it.** You can completely change the layout without breaking the theme.
+You **do not need to copy `themes.css` or `themes.js`** into your project.
+
+Just load them from the library online.
