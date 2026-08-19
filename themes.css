@@ -1,10 +1,15 @@
 /* =====================================================
    SleepKnight8 Themes
+   Shared Theme System
    Yellow + Purple
    ===================================================== */
 
-:root {
 
+/* =====================================================
+   THEME VARIABLES
+   ===================================================== */
+
+:root {
     --sk-bg-1: #14191f;
     --sk-bg-2: #202832;
 
@@ -18,16 +23,35 @@
     --sk-muted: #9aa7b5;
 
     --sk-border: #ffd54f;
-
 }
 
 
-/* =========================
+/* =====================================================
+   YELLOW
+   ===================================================== */
+
+body.sk-yellow {
+    --sk-bg-1: #14191f;
+    --sk-bg-2: #202832;
+
+    --sk-primary: #ffd54f;
+    --sk-primary-hover: #ffca28;
+
+    --sk-surface: #262f3b;
+    --sk-surface-2: #1b2129;
+
+    --sk-text: #ffd54f;
+    --sk-muted: #9aa7b5;
+
+    --sk-border: #ffd54f;
+}
+
+
+/* =====================================================
    PURPLE
-   ========================= */
+   ===================================================== */
 
 body.sk-purple {
-
     --sk-bg-1: #101010;
     --sk-bg-2: #18121f;
 
@@ -41,16 +65,14 @@ body.sk-purple {
     --sk-muted: #b58cff;
 
     --sk-border: #b58cff;
-
 }
 
 
-/* =========================
-   THEME COLORS
-   ========================= */
+/* =====================================================
+   BODY
+   ===================================================== */
 
 body {
-
     background:
         linear-gradient(
             135deg,
@@ -60,15 +82,35 @@ body {
 
     color: var(--sk-text);
 
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 
-/* =========================
-   COMMON CONTROLS
-   ========================= */
+/* =====================================================
+   TEXT
+   ===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label,
+li {
+    color: var(--sk-text);
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
 
 button {
-
     background: var(--sk-surface);
     color: var(--sk-text);
 
@@ -76,59 +118,176 @@ button {
 
     cursor: pointer;
 
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
-
 
 button:hover {
-
     background: var(--sk-primary);
     color: var(--sk-bg-1);
-
 }
 
+
+/* =====================================================
+   LINKS
+   ===================================================== */
 
 a {
-
     color: var(--sk-primary);
 
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
 }
-
 
 a:hover {
-
     color: var(--sk-primary-hover);
-
 }
 
 
-/* =========================
-   RANGE INPUTS
-   ========================= */
+/* =====================================================
+   INPUTS
+   ===================================================== */
 
-input[type="range"] {
-
-    accent-color: var(--sk-primary);
-
-}
-
-
-/* =========================
-   THEME SWITCH
-   ========================= */
-
-.theme-switch button {
-
-    background: var(--sk-surface);
+input,
+textarea,
+select {
+    background: var(--sk-surface-2);
     color: var(--sk-text);
 
-    border: 2px solid var(--sk-border);
+    border: 1px solid var(--sk-border);
+}
 
+input::placeholder,
+textarea::placeholder {
+    color: var(--sk-muted);
 }
 
 
-.theme-switch button:hover {
+/* =====================================================
+   COMMON SURFACES
+   ===================================================== */
+
+.steps,
+.game,
+.card,
+.panel,
+.output,
+.box,
+.result-box,
+#GameResultDiv,
+#MoneyDisplay,
+#BetDisplay {
+    background: var(--sk-surface);
+}
+
+
+/* =====================================================
+   RANGE SLIDERS
+   ===================================================== */
+
+input[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: var(--sk-surface-2);
+
+    border: none;
+
+    accent-color: var(--sk-primary);
+}
+
+
+/* Chrome / Edge / Safari */
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
 
     background: var(--sk-primary);
-    color: var(--sk-bg-1);
 
+    border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 22px;
+    height: 22px;
+
+    margin-top: -8px;
+
+    border-radius: 50%;
+
+    background: var(--sk-surface);
+
+    border: 3px solid var(--sk-primary);
+
+    cursor: pointer;
+}
+
+
+/* Firefox */
+
+input[type="range"]::-moz-range-track {
+    height: 6px;
+
+    background: var(--sk-primary);
+
+    border-radius: 10px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: var(--sk-surface);
+
+    border: 3px solid var(--sk-primary);
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   THEME SWITCH
+   ===================================================== */
+
+.theme-switch button {
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    border-radius: 12px;
+
+    font-size: 1.2rem;
+}
+
+.theme-switch button:hover {
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   BORDERS
+   ===================================================== */
+
+.theme-border {
+    border: 2px solid var(--sk-border);
+}
+
+
+/* =====================================================
+   SHARED EFFECT
+   ===================================================== */
+
+.theme-glow:hover {
+    box-shadow:
+        0 0 20px var(--sk-primary);
 }
