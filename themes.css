@@ -1,15 +1,15 @@
 /* =====================================================
    SleepKnight8 Themes
-   Shared Theme System
-   Yellow + Purple
+   Universal Theme System
    ===================================================== */
 
 
 /* =====================================================
-   THEME VARIABLES
+   DEFAULT THEME
    ===================================================== */
 
 :root {
+
     --sk-bg-1: #14191f;
     --sk-bg-2: #202832;
 
@@ -23,14 +23,20 @@
     --sk-muted: #9aa7b5;
 
     --sk-border: #ffd54f;
+
+    --sk-on-primary: #14191f;
+
+    --sk-shadow: rgba(0, 0, 0, 0.25);
+
 }
 
 
 /* =====================================================
-   YELLOW
+   YELLOW THEME
    ===================================================== */
 
 body.sk-yellow {
+
     --sk-bg-1: #14191f;
     --sk-bg-2: #202832;
 
@@ -44,14 +50,20 @@ body.sk-yellow {
     --sk-muted: #9aa7b5;
 
     --sk-border: #ffd54f;
+
+    --sk-on-primary: #14191f;
+
+    --sk-shadow: rgba(0, 0, 0, 0.25);
+
 }
 
 
 /* =====================================================
-   PURPLE
+   PURPLE THEME
    ===================================================== */
 
 body.sk-purple {
+
     --sk-bg-1: #101010;
     --sk-bg-2: #18121f;
 
@@ -65,14 +77,20 @@ body.sk-purple {
     --sk-muted: #b58cff;
 
     --sk-border: #b58cff;
+
+    --sk-on-primary: #101010;
+
+    --sk-shadow: rgba(0, 0, 0, 0.35);
+
 }
 
 
 /* =====================================================
-   BODY
+   GLOBAL
    ===================================================== */
 
 body {
+
     background:
         linear-gradient(
             135deg,
@@ -85,6 +103,7 @@ body {
     transition:
         background 0.3s ease,
         color 0.3s ease;
+
 }
 
 
@@ -102,7 +121,9 @@ p,
 span,
 label,
 li {
+
     color: var(--sk-text);
+
 }
 
 
@@ -111,8 +132,9 @@ li {
    ===================================================== */
 
 button {
-    background: var(--sk-surface);
-    color: var(--sk-text);
+
+    background: var(--sk-primary);
+    color: var(--sk-on-primary);
 
     border: 2px solid var(--sk-border);
 
@@ -123,28 +145,21 @@ button {
         color 0.2s ease,
         border-color 0.2s ease,
         transform 0.2s ease;
+
 }
+
 
 button:hover {
-    background: var(--sk-primary);
-    color: var(--sk-bg-1);
+
+    background: var(--sk-primary-hover);
+
 }
 
 
-/* =====================================================
-   LINKS
-   ===================================================== */
+button:active {
 
-a {
-    color: var(--sk-primary);
+    transform: scale(0.97);
 
-    transition:
-        color 0.2s ease,
-        opacity 0.2s ease;
-}
-
-a:hover {
-    color: var(--sk-primary-hover);
 }
 
 
@@ -155,33 +170,119 @@ a:hover {
 input,
 textarea,
 select {
+
     background: var(--sk-surface-2);
     color: var(--sk-text);
 
     border: 1px solid var(--sk-border);
+
 }
+
 
 input::placeholder,
 textarea::placeholder {
+
     color: var(--sk-muted);
+
 }
 
 
 /* =====================================================
-   COMMON SURFACES
+   LINKS
    ===================================================== */
 
-.steps,
-.game,
-.card,
-.panel,
-.output,
-.box,
-.result-box,
-#GameResultDiv,
-#MoneyDisplay,
-#BetDisplay {
+a {
+
+    color: var(--sk-primary);
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+a:hover {
+
+    color: var(--sk-primary-hover);
+
+}
+
+
+/* =====================================================
+   GENERIC SURFACE
+   ===================================================== */
+
+.sk-surface {
+
     background: var(--sk-surface);
+
+}
+
+
+.sk-surface-2 {
+
+    background: var(--sk-surface-2);
+
+}
+
+
+/* =====================================================
+   GENERIC BORDER
+   ===================================================== */
+
+.sk-border {
+
+    border: 2px solid var(--sk-border);
+
+}
+
+
+/* =====================================================
+   GENERIC TEXT
+   ===================================================== */
+
+.sk-text {
+
+    color: var(--sk-text);
+
+}
+
+
+.sk-primary {
+
+    color: var(--sk-primary);
+
+}
+
+
+.sk-muted {
+
+    color: var(--sk-muted);
+
+}
+
+
+/* =====================================================
+   GENERIC BACKGROUND
+   ===================================================== */
+
+.sk-primary-bg {
+
+    background: var(--sk-primary);
+    color: var(--sk-on-primary);
+
+}
+
+
+.sk-bg {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--sk-bg-1),
+            var(--sk-bg-2)
+        );
+
 }
 
 
@@ -190,28 +291,30 @@ textarea::placeholder {
    ===================================================== */
 
 input[type="range"] {
+
     appearance: none;
     -webkit-appearance: none;
 
-    background: var(--sk-surface-2);
+    background: transparent;
 
     border: none;
 
-    accent-color: var(--sk-primary);
 }
 
 
-/* Chrome / Edge / Safari */
-
 input[type="range"]::-webkit-slider-runnable-track {
+
     height: 6px;
 
     background: var(--sk-primary);
 
     border-radius: 10px;
+
 }
 
+
 input[type="range"]::-webkit-slider-thumb {
+
     appearance: none;
     -webkit-appearance: none;
 
@@ -227,20 +330,23 @@ input[type="range"]::-webkit-slider-thumb {
     border: 3px solid var(--sk-primary);
 
     cursor: pointer;
+
 }
 
 
-/* Firefox */
-
 input[type="range"]::-moz-range-track {
+
     height: 6px;
 
     background: var(--sk-primary);
 
     border-radius: 10px;
+
 }
 
+
 input[type="range"]::-moz-range-thumb {
+
     width: 22px;
     height: 22px;
 
@@ -251,6 +357,7 @@ input[type="range"]::-moz-range-thumb {
     border: 3px solid var(--sk-primary);
 
     cursor: pointer;
+
 }
 
 
@@ -259,35 +366,68 @@ input[type="range"]::-moz-range-thumb {
    ===================================================== */
 
 .theme-switch button {
-    width: 45px;
-    height: 45px;
 
-    padding: 0;
+    background: var(--sk-surface);
 
-    border-radius: 12px;
+    color: var(--sk-text);
 
-    font-size: 1.2rem;
 }
+
 
 .theme-switch button:hover {
-    transform: scale(1.08);
+
+    background: var(--sk-primary);
+
+    color: var(--sk-on-primary);
+
 }
 
 
 /* =====================================================
-   BORDERS
+   OPTIONAL CARD STYLE
    ===================================================== */
 
-.theme-border {
+.sk-card {
+
+    background: var(--sk-surface);
+
     border: 2px solid var(--sk-border);
+
+    box-shadow:
+        0 5px 20px var(--sk-shadow);
+
 }
 
 
 /* =====================================================
-   SHARED EFFECT
+   IMAGES
    ===================================================== */
 
-.theme-glow:hover {
+img {
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+img:hover {
+
     box-shadow:
         0 0 20px var(--sk-primary);
+
+}
+
+
+/* =====================================================
+   SELECTION
+   ===================================================== */
+
+::selection {
+
+    background: var(--sk-primary);
+
+    color: var(--sk-on-primary);
+
 }
