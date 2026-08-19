@@ -1,38 +1,50 @@
 /* =====================================================
-   SleepKnight8 Theme System
+   SleepKnight8 Themes
+   Global Theme System
    ===================================================== */
+
+const THEME_KEY = "SleepKnight8Theme";
+
+const THEMES = [
+    "yellow",
+    "purple"
+];
+
 
 function setTheme(theme) {
 
-    if (theme !== "yellow" && theme !== "purple") {
+    if (!THEMES.includes(theme)) {
         theme = "yellow";
     }
 
     document.body.classList.remove(
-        "sk-yellow",
-        "sk-purple"
+        ...THEMES.map(
+            name => `sk-${name}`
+        )
     );
 
     document.body.classList.add(
-        "sk-" + theme
+        `sk-${theme}`
     );
 
     localStorage.setItem(
-        "SleepKnight8Theme",
+        THEME_KEY,
         theme
     );
 }
 
 
-/* =====================================================
-   LOAD SAVED THEME
-   ===================================================== */
+function loadTheme() {
 
-const savedTheme =
-    localStorage.getItem("SleepKnight8Theme");
+    const savedTheme =
+        localStorage.getItem(THEME_KEY);
 
-setTheme(
-    savedTheme === "purple"
-        ? "purple"
-        : "yellow"
-);
+    setTheme(
+        THEMES.includes(savedTheme)
+            ? savedTheme
+            : "yellow"
+    );
+}
+
+
+loadTheme();
