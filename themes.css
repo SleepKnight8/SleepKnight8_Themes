@@ -1,115 +1,96 @@
 /* =====================================================
    SleepKnight8 Themes
-   Universal Theme System
-   ===================================================== */
-
-
-/* =====================================================
-   DEFAULT THEME
+   Global Theme System
    ===================================================== */
 
 :root {
-
-    --sk-bg-1: #14191f;
+    --sk-bg: #14191f;
     --sk-bg-2: #202832;
-
-    --sk-primary: #ffd54f;
-    --sk-primary-hover: #ffca28;
 
     --sk-surface: #262f3b;
     --sk-surface-2: #1b2129;
+
+    --sk-primary: #ffd54f;
+    --sk-primary-hover: #ffca28;
 
     --sk-text: #ffd54f;
     --sk-muted: #9aa7b5;
 
     --sk-border: #ffd54f;
 
-    --sk-on-primary: #14191f;
-
-    --sk-shadow: rgba(0, 0, 0, 0.25);
-
+    --sk-shadow: rgba(0, 0, 0, .25);
 }
 
 
-/* =====================================================
-   YELLOW THEME
-   ===================================================== */
+/* =========================
+   YELLOW
+   ========================= */
 
 body.sk-yellow {
-
-    --sk-bg-1: #14191f;
+    --sk-bg: #14191f;
     --sk-bg-2: #202832;
-
-    --sk-primary: #ffd54f;
-    --sk-primary-hover: #ffca28;
 
     --sk-surface: #262f3b;
     --sk-surface-2: #1b2129;
+
+    --sk-primary: #ffd54f;
+    --sk-primary-hover: #ffca28;
 
     --sk-text: #ffd54f;
     --sk-muted: #9aa7b5;
 
     --sk-border: #ffd54f;
 
-    --sk-on-primary: #14191f;
-
-    --sk-shadow: rgba(0, 0, 0, 0.25);
-
+    --sk-shadow: rgba(0, 0, 0, .25);
 }
 
 
-/* =====================================================
-   PURPLE THEME
-   ===================================================== */
+/* =========================
+   PURPLE
+   ========================= */
 
 body.sk-purple {
-
-    --sk-bg-1: #101010;
+    --sk-bg: #101010;
     --sk-bg-2: #18121f;
-
-    --sk-primary: #b58cff;
-    --sk-primary-hover: #c7a7ff;
 
     --sk-surface: #211a2b;
     --sk-surface-2: #15111a;
 
+    --sk-primary: #b58cff;
+    --sk-primary-hover: #c7a7ff;
+
     --sk-text: #b58cff;
-    --sk-muted: #b58cff;
+    --sk-muted: #b8a8d0;
 
     --sk-border: #b58cff;
 
-    --sk-on-primary: #101010;
-
-    --sk-shadow: rgba(0, 0, 0, 0.35);
-
+    --sk-shadow: rgba(0, 0, 0, .35);
 }
 
 
-/* =====================================================
-   GLOBAL
-   ===================================================== */
+/* =========================
+   BODY
+   ========================= */
 
 body {
-
     background:
         linear-gradient(
             135deg,
-            var(--sk-bg-1),
+            var(--sk-bg),
             var(--sk-bg-2)
         );
 
     color: var(--sk-text);
 
     transition:
-        background 0.3s ease,
-        color 0.3s ease;
-
+        background .3s ease,
+        color .3s ease;
 }
 
 
-/* =====================================================
+/* =========================
    TEXT
-   ===================================================== */
+   ========================= */
 
 h1,
 h2,
@@ -120,314 +101,164 @@ h6,
 p,
 span,
 label,
-li {
-
+li,
+pre {
     color: var(--sk-text);
-
 }
 
 
-/* =====================================================
+/* =========================
    BUTTONS
-   ===================================================== */
+   ========================= */
 
 button {
-
-    background: var(--sk-primary);
-    color: var(--sk-on-primary);
+    background: var(--sk-surface);
+    color: var(--sk-text);
 
     border: 2px solid var(--sk-border);
 
-    cursor: pointer;
-
     transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
 }
-
 
 button:hover {
-
-    background: var(--sk-primary-hover);
-
+    background: var(--sk-primary);
+    color: var(--sk-bg);
+    border-color: var(--sk-primary-hover);
 }
 
 
-button:active {
+/* =========================
+   LINKS
+   ========================= */
 
-    transform: scale(0.97);
+a {
+    color: var(--sk-primary);
+}
 
+a:hover {
+    color: var(--sk-primary-hover);
 }
 
 
-/* =====================================================
+/* =========================
+   COMMON SURFACES
+   ========================= */
+
+.steps,
+.game,
+.card,
+.panel,
+.output,
+.box,
+.result-box {
+    background: var(--sk-surface);
+    color: var(--sk-text);
+    border-color: var(--sk-border);
+}
+
+
+/* =========================
    INPUTS
-   ===================================================== */
+   ========================= */
 
 input,
 textarea,
 select {
-
     background: var(--sk-surface-2);
     color: var(--sk-text);
 
     border: 1px solid var(--sk-border);
-
 }
-
 
 input::placeholder,
 textarea::placeholder {
-
     color: var(--sk-muted);
-
 }
 
 
-/* =====================================================
-   LINKS
-   ===================================================== */
-
-a {
-
-    color: var(--sk-primary);
-
-    transition:
-        color 0.2s ease;
-
-}
-
-
-a:hover {
-
-    color: var(--sk-primary-hover);
-
-}
-
-
-/* =====================================================
-   GENERIC SURFACE
-   ===================================================== */
-
-.sk-surface {
-
-    background: var(--sk-surface);
-
-}
-
-
-.sk-surface-2 {
-
-    background: var(--sk-surface-2);
-
-}
-
-
-/* =====================================================
-   GENERIC BORDER
-   ===================================================== */
-
-.sk-border {
-
-    border: 2px solid var(--sk-border);
-
-}
-
-
-/* =====================================================
-   GENERIC TEXT
-   ===================================================== */
-
-.sk-text {
-
-    color: var(--sk-text);
-
-}
-
-
-.sk-primary {
-
-    color: var(--sk-primary);
-
-}
-
-
-.sk-muted {
-
-    color: var(--sk-muted);
-
-}
-
-
-/* =====================================================
-   GENERIC BACKGROUND
-   ===================================================== */
-
-.sk-primary-bg {
-
-    background: var(--sk-primary);
-    color: var(--sk-on-primary);
-
-}
-
-
-.sk-bg {
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--sk-bg-1),
-            var(--sk-bg-2)
-        );
-
-}
-
-
-/* =====================================================
+/* =========================
    RANGE SLIDERS
-   ===================================================== */
+   ========================= */
 
 input[type="range"] {
-
-    appearance: none;
-    -webkit-appearance: none;
-
-    background: transparent;
-
-    border: none;
-
+    accent-color: var(--sk-primary);
 }
-
 
 input[type="range"]::-webkit-slider-runnable-track {
-
-    height: 6px;
-
     background: var(--sk-primary);
-
     border-radius: 10px;
-
 }
-
-
-input[type="range"]::-webkit-slider-thumb {
-
-    appearance: none;
-    -webkit-appearance: none;
-
-    width: 22px;
-    height: 22px;
-
-    margin-top: -8px;
-
-    border-radius: 50%;
-
-    background: var(--sk-surface);
-
-    border: 3px solid var(--sk-primary);
-
-    cursor: pointer;
-
-}
-
 
 input[type="range"]::-moz-range-track {
-
-    height: 6px;
-
     background: var(--sk-primary);
-
     border-radius: 10px;
-
 }
 
+input[type="range"]::-webkit-slider-thumb {
+    background: var(--sk-surface);
+    border: 3px solid var(--sk-primary);
+}
 
 input[type="range"]::-moz-range-thumb {
-
-    width: 22px;
-    height: 22px;
-
-    border-radius: 50%;
-
     background: var(--sk-surface);
-
     border: 3px solid var(--sk-primary);
-
-    cursor: pointer;
-
 }
 
 
-/* =====================================================
+/* =========================
    THEME SWITCH
-   ===================================================== */
+   ========================= */
 
 .theme-switch button {
-
     background: var(--sk-surface);
-
     color: var(--sk-text);
 
+    border: 2px solid var(--sk-border);
 }
-
 
 .theme-switch button:hover {
-
     background: var(--sk-primary);
-
-    color: var(--sk-on-primary);
-
+    color: var(--sk-bg);
 }
 
 
-/* =====================================================
-   OPTIONAL CARD STYLE
-   ===================================================== */
+/* =========================
+   OPTIONAL THEME UTILITIES
+   ========================= */
 
-.sk-card {
+.theme-border {
+    border-color: var(--sk-border);
+}
 
-    background: var(--sk-surface);
-
-    border: 2px solid var(--sk-border);
-
+.theme-shadow {
     box-shadow:
         0 5px 20px var(--sk-shadow);
-
 }
 
 
-/* =====================================================
+/* =========================
    IMAGES
-   ===================================================== */
+   ========================= */
 
 img {
-
-    transition:
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
-
+    transition: box-shadow .3s ease;
 }
-
 
 img:hover {
-
     box-shadow:
         0 0 20px var(--sk-primary);
-
 }
 
 
-/* =====================================================
-   SELECTION
-   ===================================================== */
+/* =========================
+   TEXT SELECTION
+   ========================= */
 
 ::selection {
-
     background: var(--sk-primary);
-
-    color: var(--sk-on-primary);
-
+    color: var(--sk-bg);
 }
