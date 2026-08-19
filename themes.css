@@ -1,6 +1,10 @@
-/* SleepKnight8 Themes */
+/* =====================================================
+   SleepKnight8 Themes
+   Yellow + Purple
+   ===================================================== */
 
 :root {
+
     --sk-bg-1: #14191f;
     --sk-bg-2: #202832;
 
@@ -12,11 +16,18 @@
 
     --sk-text: #ffd54f;
     --sk-muted: #9aa7b5;
+
     --sk-border: #ffd54f;
+
 }
 
 
+/* =========================
+   PURPLE
+   ========================= */
+
 body.sk-purple {
+
     --sk-bg-1: #101010;
     --sk-bg-2: #18121f;
 
@@ -28,5 +39,96 @@ body.sk-purple {
 
     --sk-text: #b58cff;
     --sk-muted: #b58cff;
+
     --sk-border: #b58cff;
+
+}
+
+
+/* =========================
+   THEME COLORS
+   ========================= */
+
+body {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--sk-bg-1),
+            var(--sk-bg-2)
+        );
+
+    color: var(--sk-text);
+
+}
+
+
+/* =========================
+   COMMON CONTROLS
+   ========================= */
+
+button {
+
+    background: var(--sk-surface);
+    color: var(--sk-text);
+
+    border: 2px solid var(--sk-border);
+
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    background: var(--sk-primary);
+    color: var(--sk-bg-1);
+
+}
+
+
+a {
+
+    color: var(--sk-primary);
+
+}
+
+
+a:hover {
+
+    color: var(--sk-primary-hover);
+
+}
+
+
+/* =========================
+   RANGE INPUTS
+   ========================= */
+
+input[type="range"] {
+
+    accent-color: var(--sk-primary);
+
+}
+
+
+/* =========================
+   THEME SWITCH
+   ========================= */
+
+.theme-switch button {
+
+    background: var(--sk-surface);
+    color: var(--sk-text);
+
+    border: 2px solid var(--sk-border);
+
+}
+
+
+.theme-switch button:hover {
+
+    background: var(--sk-primary);
+    color: var(--sk-bg-1);
+
 }
